@@ -5,6 +5,7 @@ import java.util.List;
 public class Lion {
 
     boolean hasMane;
+    //слабая зависимость
     private final Feline feline;
 
     public Lion(Feline feline, String sex) throws Exception {

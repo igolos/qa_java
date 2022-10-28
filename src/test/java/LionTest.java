@@ -19,46 +19,50 @@ public class LionTest {
     public void constructorThrowsExceptionOnUnsupportedSex() {
         Exception exception = null;
         try {
-            Lion lion = new Lion(feline,"Непонятно");
+            Lion lion = new Lion(feline, "Непонятно");
         } catch (Exception ex) {
             exception = ex;
         }
         Assert.assertEquals("Используйте допустимые значения пола животного - самей или самка", exception.getMessage());
     }
+
     @Test
     public void hashManeTrue() throws Exception {
-        Lion lion = new Lion(feline,"Самец");
+        Lion lion = new Lion(feline, "Самец");
         boolean expectedMane = true;
 
         boolean actualMane = lion.doesHaveMane();
         Assert.assertEquals("Does not have mane", expectedMane, actualMane);
     }
+
     @Test
     public void hashManeFalse() throws Exception {
-        Lion lion = new Lion(feline,"Самка");
+        Lion lion = new Lion(feline, "Самка");
         boolean expectedMane = false;
 
         boolean actualMane = lion.doesHaveMane();
         Assert.assertEquals("Have mane", expectedMane, actualMane);
     }
+
     @Test
     public void getLionKittensValidValue() throws Exception {
-        Lion lion=new Lion(feline, "Самец");
-        int expectedLionKittens=1;
+        Lion lion = new Lion(feline, "Самец");
+        int expectedLionKittens = 1;
         Mockito.when(lion.getKittens()).thenReturn(1);
-        int actualLionKittens=lion.getKittens();
+        int actualLionKittens = lion.getKittens();
         Assert.assertEquals("Not valid value", expectedLionKittens, actualLionKittens);
     }
-@Test
-    public void getFoodLionValidValue() throws Exception{
-    Lion lion=new Lion(feline, "Самец");
-    Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-    List<String> expectedFoodLion = List.of("Животные", "Птицы", "Рыба");
 
-    List<String> actualFoodLion = lion.getFood();
+    @Test
+    public void getFoodLionValidValue() throws Exception {
+        Lion lion = new Lion(feline, "Самец");
+        Mockito.when(lion.getFood()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+        List<String> expectedFoodLion = List.of("Животные", "Птицы", "Рыба");
 
-    Assert.assertEquals("Not a food for predator", expectedFoodLion, actualFoodLion);
-}
+        List<String> actualFoodLion = lion.getFood();
 
+        Assert.assertEquals("Not a food for predator", expectedFoodLion, actualFoodLion);
+    }
+//подскажите как реализовать параметризацию и где
 
 }

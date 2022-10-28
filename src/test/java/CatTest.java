@@ -35,6 +35,7 @@ public class CatTest {
 
         List<String> actualFood = cat.getFood();
 
-                Assert.assertEquals("Not a food for predator", expectedFood, actualFood);
+        Assert.assertEquals("Not a food for predator", expectedFood, actualFood);
     }
+    //подскажите как реализовать параметризацию и где
 }

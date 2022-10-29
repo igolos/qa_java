@@ -37,5 +37,4 @@ public class CatTest {
 
         Assert.assertEquals("Not a food for predator", expectedFood, actualFood);
     }
-    //подскажите как реализовать параметризацию и где
 }

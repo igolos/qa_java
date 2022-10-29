@@ -39,5 +39,4 @@ public class FelineTest {
 
         Assert.assertEquals("Другое число", expectedKittensCount, actualKittensCount);
     }
-    //подскажите как реализовать параметризацию и где
 }
